@@ -1,0 +1,17 @@
+.input__block {
+	margin: 0 auto;
+	width: 320px;
+}
+.input {
+	margin-top: 200px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 300px;
+	height: 20px;
+	border: 1px solid black;
+}
+.input__btn {
+	border: 1px solid black;
+	height: 20px;
+	width: 20px;
+}
