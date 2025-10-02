@@ -13,6 +13,18 @@ const Main = () => {
     }
   };
 
+  const addTask = (e) => {
+    if (e.key === "Enter" && inputValue.trim() !== "") {
+      setTasks([...tasks, inputValue]);
+      setInputValue("");
+    }
+  };
+
+  const deleteTask = (id) => {
+    const updateItems = tasks.filter((task, index) => index !== id);
+    setTasks(updateItems);
+  };
+
   return (
     <div className="main">
       <div className="container">
@@ -20,6 +32,7 @@ const Main = () => {
           <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => addTask(e)}
             className="addTask__input"
             type="text"
           />
@@ -30,7 +43,15 @@ const Main = () => {
         <div className="taskList">
           {tasks.map((task, index) => (
             <div key={task} className="taskList__item">
-              {index + 1}. {task}
+              <button className="taskList__accept"></button>
+              <div className="taskList__task">
+                {index + 1}. {task}
+              </div>
+              <button
+                key={task}
+                onClick={() => deleteTask(index)}
+                className="taskList__delete"
+              ></button>
             </div>
           ))}
         </div>
