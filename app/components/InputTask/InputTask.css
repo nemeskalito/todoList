@@ -1,0 +1,21 @@
+.addTask {
+  height: 100%;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  gap: 20px;
+}
+
+.addTask__input {
+  border: 1px solid black;
+  height: 30px;
+  width: 100%;
+}
+.addTask__btn {
+  border: 1px solid black;
+  padding: 5px;
+  height: 30px;
+  background-color: orange;
+  border-radius: 10px;
+}
