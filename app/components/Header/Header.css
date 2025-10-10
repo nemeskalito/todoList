@@ -1,7 +1,20 @@
 .header {
+  position: relative;
   margin: 0 auto;
   width: 600px;
   font-size: 60px;
   text-align: center;
-  margin-top: 50px;
+}
+
+.header:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  transform: rotate(90deg);
+  min-width: 4px;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 100%;
+  bottom: -245px;
+  left: 50%;
 }

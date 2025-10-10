@@ -1,21 +1,40 @@
 .addTask {
+  position: relative;
   height: 100%;
   width: 400px;
   margin: 0 auto;
   margin-top: 100px;
   display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
 .addTask__input {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 30px;
   width: 100%;
 }
 .addTask__btn {
-  border: 1px solid black;
+  border: 1px solid white;
+  color: black;
   padding: 5px;
   height: 30px;
-  background-color: orange;
+  background-color: rgb(252, 151, 0);
   border-radius: 10px;
+	transition: all 0.2s ease-in-out;
+}
+.addTask__btn:hover {
+  background-color: rgb(235, 142, 2);
+}
+
+.addTask:before {
+  content: "**************";
+  position: absolute;
+  display: inline-block;
+	font-size: 20px;
+  min-height: 150px;
+  border-radius: 100%;
+  bottom: -190px;
+  left: 50%;
+  transform: translateX(-50%);
 }

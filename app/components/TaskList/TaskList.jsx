@@ -7,11 +7,20 @@ const TaskList = ({ tasks, setTasks }) => {
   const deleteTask = (id) => {
     setTasks(tasks.filter((_, index) => index !== id));
   };
+
   return (
     <div className="taskList">
+      {tasks.length === 0 && (
+        <p style={{ textAlign: "center", fontSize: 30 }}>Cписок пуст</p>
+      )}
       {tasks.map((task, index) => (
-        <div className="taskList__item">
-          <Task key={task} task={task} index={index} deleteTask={deleteTask} />
+        <div key={index + 1} className="taskList__item">
+          <Task
+            task={task}
+            setTasks={setTasks}
+            index={index}
+            deleteTask={deleteTask}
+          />
         </div>
       ))}
     </div>
