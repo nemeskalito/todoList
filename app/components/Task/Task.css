@@ -2,7 +2,7 @@
   flex: 1;
   border-radius: 10px;
   position: relative;
-	width: 100%;
+  width: 100%;
 }
 
 .task__delete {
@@ -37,7 +37,8 @@
   flex-shrink: 0;
 }
 
-.task__change {
+.task__change,
+.task__apply {
   position: relative;
   padding: 10px;
   border: 1px solid white;

@@ -1,22 +1,22 @@
-
 "use client";
 
 import { useState } from "react";
 import "./InputTask.css";
+import addNewTodo from "@/app/api/addNewTodo";
 
 const InputTask = ({ setTasks }) => {
   const [inputValue, setInputValue] = useState("");
 
   const addTask = (e) => {
     if (e.key === "Enter" && inputValue.trim() !== "") {
-      setTasks((tasks) => [...tasks, inputValue]);
+      addNewTodo(inputValue, setTasks);
       setInputValue("");
     }
   };
 
   const handleClick = () => {
     if (inputValue.trim() !== "") {
-      setTasks((tasks) => [...tasks, inputValue]);
+      addNewTodo(inputValue, setTasks);
       setInputValue("");
     }
   };

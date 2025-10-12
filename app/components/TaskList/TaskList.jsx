@@ -1,11 +1,12 @@
 "use client";
-
+import deleteTodo from "@/app/api/deleteTodo";
 import Task from "../Task/Task";
 import "./TaskList.css";
 
 const TaskList = ({ tasks, setTasks }) => {
   const deleteTask = (id) => {
-    setTasks(tasks.filter((_, index) => index !== id));
+		deleteTodo(id)
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   return (
@@ -13,16 +14,17 @@ const TaskList = ({ tasks, setTasks }) => {
       {tasks.length === 0 && (
         <p style={{ textAlign: "center", fontSize: 30 }}>Cписок пуст</p>
       )}
-      {tasks.map((task, index) => (
-        <div key={index + 1} className="taskList__item">
-          <Task
-            task={task}
-            setTasks={setTasks}
-            index={index}
-            deleteTask={deleteTask}
-          />
-        </div>
-      ))}
+      {tasks
+        .sort((a, b) => a.id - b.id)
+        .map((task) => (
+          <div key={task.id} className="taskList__item">
+            <Task
+              task={task}
+              setTasks={setTasks}
+              deleteTask={deleteTask}
+            />
+          </div>
+        ))}
     </div>
   );
 };
