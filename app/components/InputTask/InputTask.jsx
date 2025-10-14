@@ -19,6 +19,9 @@ const InputTask = ({ setTasks }) => {
       addNewTodo(inputValue, setTasks);
       setInputValue("");
     }
+    if (inputValue.length === 0) {
+      alert("Заполни поле");
+    }
   };
 
   return (

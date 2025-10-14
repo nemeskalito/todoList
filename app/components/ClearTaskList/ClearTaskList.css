@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+	align-items: center;
+}
+.btn {
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 5px;
+
+  background-color: rgb(252, 151, 0);
+}

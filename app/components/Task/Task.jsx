@@ -11,6 +11,9 @@ const Task = ({ task, setTasks, deleteTask }) => {
 
   const checkedChange = () => {
     setChecked((prev) => !prev);
+    setTasks((tasks) =>
+      tasks.map((t) => (t.id === task.id ? { ...t, isCompleted: !checked } : t))
+    );
   };
 
   const handleKeyDown = (e) => {
